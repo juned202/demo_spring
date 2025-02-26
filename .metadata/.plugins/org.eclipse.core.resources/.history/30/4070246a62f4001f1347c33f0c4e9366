@@ -1,0 +1,24 @@
+package com.example.demo;
+
+import java.util.logging.Logger;
+
+import org.apache.commons.logging.Log;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
+public class temp {
+
+	@Autowired
+	Logger log;
+	
+	@GetMapping(path = "/temp")
+	public String temp() {
+		System.out.print("this is");
+		log.info("finally");
+		return "connect spring";
+	}
+}

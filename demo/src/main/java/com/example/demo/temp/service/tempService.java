@@ -49,4 +49,12 @@ public class tempService {
          userRepository.delete(user.get());
          return;
     }
+    
+    public void updateUser(Long id,UserDTO userDto) {
+    	// Convert DTO to Entity
+        Optional<User> users = userRepository.findById(id);
+        User user = modelMapper.map(userDto, User.class);
+         userRepository.save(user);
+         return;
+    }
 }
